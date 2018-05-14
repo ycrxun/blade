@@ -688,6 +688,7 @@ public class Blade {
             loadConfig(args);
             environment.set(ENV_KEY_SERVER_ADDRESS, address);
             Assert.greaterThan(port, 0, "server port not is negative number.");
+            environment.set(ENV_KEY_SERVER_PORT, port);
             this.bootClass = bootClass;
             eventManager.fireEvent(EventType.SERVER_STARTING, this);
             Thread thread = new Thread(() -> {
